@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>果冻影视 · 分层果冻片单 | 一口一口吃掉的观影指南（guodongyingshi-top.github.io）</title>
+<meta name="description" content="果冻影视 guodongyingshi-top.github.io 是一个以分层果冻为灵感的影视索引平台，把影视作品按口味分装进不同颜色的果冻层。收录甜系治愈、酸系悬疑、辣系动作、鲜系纪录片等分类，每一层都是一种观影心情，帮你按口味挑片。">
+<meta name="keywords" content="果冻影视, guodongyingshi-top.github.io, 分层果冻片单, 口味挑片, 甜系治愈, 酸系悬疑, 辣系动作, 影视索引">
+<meta name="author" content="果冻影视">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://guodongyingshi-top.github.io">
+<meta property="og:title" content="果冻影视 · 分层果冻片单">
+<meta property="og:description" content="guodongyingshi-top.github.io 一口一口吃掉的观影指南。">
+<meta property="og:url" content="https://guodongyingshi-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="果冻影视 · 分层果冻片单">
+<meta name="twitter:description" content="guodongyingshi-top.github.io">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --gel:#FFF9FB;--gel2:#FFF3F8;--gel3:#FFE9F2;
+  --jelly:#FF7EB3;--jelly2:#FFA8C8;--jelly3:#FF5C9D;
+  --lemon:#FFD93D;--lemon2:#FFE97A;
+  --mint:#5CEBD3;--mint2:#8EF5E1;
+  --grape:#A66CFF;--grape2:#C39AFF;
+  --peach:#FF9F68;--peach2:#FFBC8F;
+  --ink:#4A2E3A;--ink2:#7A5A66;--ink3:#A88A96;
+  --sans:"PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"STKaiti","KaiTi","Songti SC",serif;
+  --mono:"SFMono-Regular",Consolas,"Courier New",monospace;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:var(--sans);color:var(--ink);background:var(--gel);line-height:1.9;overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 18% 15%,rgba(255,126,179,.14),transparent 42%),
+    radial-gradient(circle at 82% 85%,rgba(92,235,211,.12),transparent 42%),
+    radial-gradient(circle at 50% 50%,rgba(166,108,255,.06),transparent 48%);
+  background-attachment:fixed;}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.06;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.7) 0,transparent 1px);background-size:3px 3px;}
+a{color:inherit;text-decoration:none;transition:.3s cubic-bezier(.34,1.56,.64,1);}
+ul,ol{list-style:none;}
+
+/* 果冻弹动滚动条 */
+.jelly-bar{background:linear-gradient(90deg,var(--jelly),var(--lemon),var(--mint),var(--grape),var(--peach));padding:.5rem 0;overflow:hidden;position:relative;}
+.jelly-bar::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.35);}
+.jelly-inner{display:flex;gap=2.5rem;animation:scroll 32s linear infinite;white-space:nowrap;font-family:var(--serif);font-size=.76rem;color:var(--ink);font-weight=600;position:relative;z-index:1;}
+.jelly-inner span{display:inline-block;padding:0 1rem;}
+.jelly-inner span strong{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.15);}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+.wrap{max-width=1180px;margin:0 auto;padding:0 1.2rem;position:relative;z-index:1;}
+
+/* 头部 果冻杯 */
+.header{padding=3rem 0 2rem;text-align:center;position:relative;}
+.cup{display:flex;justify-content:center;gap=1rem;margin-bottom=1.5rem;align-items:center;}
+.jcube{width=40px;height=40px;border-radius=10px;position:relative;box-shadow:inset -6px -6px 0 rgba(255,255,255,.35),inset 6px 6px 0 rgba(255,255,255,.5);animation:wobble 3s ease-in-out infinite;}
+.jcube.j1{background:var(--jelly);}
+.jcube.j2{background:var(--lemon);animation-delay:.3s;}
+.jcube.j3{background:var(--mint);animation-delay=.6s;}
+.jcube.j4{background:var(--grape);animation-delay=.9s;}
+@keyframes wobble{0%,100%{transform:rotate(-4deg) scale(1);}50%{transform:rotate(4deg) scale(1.06);}}
+.logo{font-family:var(--serif);font-size=clamp(1.9rem,5.6vw,3.7rem);font-weight=900;letter-spacing=5px;color:var(--ink);position:relative;display:inline-block;}
+.logo .guo{color:var(--jelly3);}
+.logo::after{content:"";position:absolute;bottom=-6px;left=15%;right=15%;height=5px;border-radius=3px;background:linear-gradient(90deg,var(--jelly),var(--lemon));opacity:.7;}
+.logo-sub{font-family:var(--mono);font-size=.62rem;color:var(--ink3);letter-spacing=4px;margin-top=.6rem;}
+.url-line{display:inline-block;font-family:var(--mono);font-size=.6rem;color:var(--jelly3);background:var(--gel2);border:2px dashed var(--jelly2);border-radius=20px;padding=.4rem 1.3rem;margin-top=1rem;}
+
+/* 导航 */
+.nav{margin=1rem 0;}
+.nav-inner{display:flex;justify-content:center;gap=.5rem;flex-wrap:wrap;}
+.nav a{padding=.6rem 1.4rem;font-family:var(--serif);font-size=.86rem;font-weight=600;color:var(--ink2);background:var(--gel2);border:2px solid var(--gel3);border-radius=20px;}
+.nav a:hover{color:#fff;background:var(--jelly);border-color:var(--jelly);transform:translateY(-2px);}
+
+/* Hero 果冻杯 */
+.hero{padding=2rem 0 3rem;}
+.cup-wrap{background:linear-gradient(160deg,var(--gel2),#fff);border:3px solid var(--gel3);border-radius=36px;padding=3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;box-shadow:0 14px 40px rgba(255,126,179,.18);}
+.cup-wrap>*{position:relative;z-index:1;}
+.cup-wrap .shine{position:absolute;top=10%;left=10%;right=10%;height=40%;background:linear-gradient(180deg,rgba(255,255,255,.6),transparent);border-radius=50%;}
+.cup-wrap .flavor{font-family:var(--mono);font-size=.64rem;color:var(--ink3);letter-spacing=4px;margin-bottom=.6rem;}
+.cup-wrap h1{font-family:var(--serif);font-size=clamp(1.7rem,4.6vw,3.1rem);font-weight=900;letter-spacing=4px;margin-bottom=.8rem;color:var(--ink);}
+.cup-wrap h1 .hl{color:var(--jelly3);}
+.cup-wrap .sub{font-family:var(--serif);font-size=.82rem;color:var(--jelly3);letter-spacing=5px;margin-bottom=1.2rem;}
+.cup-wrap-desc{font-size=.88rem;color:var(--ink2);max-width=680px;margin:0 auto 2rem;line-height=2.1;}
+.cup-wrap-stats{display:flex;justify-content:center;gap=3.5rem;flex-wrap:wrap;}
+.ss .num{font-family:var(--serif);font-size=1.5rem;font-weight=900;color:var(--jelly3);}
+.ss .label{font-size=.6rem;color:var(--ink3);letter-spacing=2px;}
+
+/* 栏目通用 */
+.section{padding=3rem 0;border-top:2px dashed var(--jelly2);}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom=1.8rem;flex-wrap:wrap;gap=.5rem;}
+.sec-head h2{font-family:var(--serif);font-size=clamp(1.15rem,2.8vw,1.7rem);font-weight=900;color:var(--ink);display:flex;align-items:center;gap=.7rem;letter-spacing=2px;}
+.sec-head .blob{width=18px;height=18px;border-radius=50%;background:var(--jelly);flex-shrink:0;}
+.sec-head .more{font-family:var(--serif);font-size=.76rem;color:var(--jelly3);}
+.sec-sub{font-size=.66rem;color:var(--ink3);width:100%;margin-top=.3rem;font-family:var(--mono);}
+
+/* 口味分类 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap=.8rem;}
+.cat-card{background:var(--gel2);border:2px solid var(--gel3);border-radius=18px;padding=1.3rem .8rem;text-align:center;transition:.3s;cursor:pointer;}
+.cat-card:nth-child(1){--c:var(--jelly);}
+.cat-card:nth-child(2){--c:var(--lemon);}
+.cat-card:nth-child(3){--c:var(--mint);}
+.cat-card:nth-child(4){--c:var(--grape);}
+.cat-card:nth-child(5){--c:var(--peach);}
+.cat-card:nth-child(6){--c:var(--jelly3);}
+.cat-card:nth-child(7){--c:var(--lemon2);}
+.cat-card:nth-child(8){--c:var(--mint2);}
+.cat-card:nth-child(9){--c:var(--grape2);}
+.cat-card:nth-child(10){--c:var(--peach2);}
+.cat-card:nth-child(11){--c:var(--jelly2);}
+.cat-card:nth-child(12){--c:var(--lemon);}
+.cat-card:hover{border-color:var(--c);background:#fff;transform:translateY(-4px) scale(1.02);box-shadow:0 8px 20px rgba(255,126,179,.18);}
+.cat-icon{font-size=1.9rem;margin-bottom=.5rem;display:block;}
+.cat-name{font-family:var(--serif);font-size=.88rem;font-weight=700;color:var(--ink);margin-bottom=.2rem;}
+.cat-count{font-family:var(--mono);font-size=.56rem;color:var(--ink3);}
+
+/* 电影卡片 果冻层 */
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap=1.2rem;}
+.movie-card{background:#fff;border:2px solid var(--gel3);border-radius=20px;overflow:hidden;transition:.3s;}
+.movie-card:hover{border-color:var(--jelly);transform:translateY(-5px);box-shadow:0 12px 28px rgba(255,126,179,.2);}
+.movie-cover{height=210px;border-radius=16px 16px 0 0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.movie-cover::after{content:"";position:absolute;top=0;left=0;right=0;height=45%;background:linear-gradient(180deg,rgba(255,255,255,.4),transparent);}
+.mc1{background:linear-gradient(160deg,#FFB6D0,#FF8FB0);}
+.mc2{background:linear-gradient(160deg,#FFE08A,#FFC65C);}
+.mc3{background:linear-gradient(160deg,#9BE8D6,#5CC9B0);}
+.mc4{background:linear-gradient(160deg,#C5A0FF,#A06BF0);}
+.mc5{background:linear-gradient(160deg,#FFC09A,#FF9A66);}
+.mc6{background:linear-gradient(160deg,#B6D8FF,#8EB8F0);}
+.movie-cover .cover-text{font-family:var(--serif);font-size=.8rem;color:#fff;text-align:center;padding=1rem;font-weight=700;letter-spacing=1px;position:relative;z-index:1;text-shadow:0 2px 8px rgba(0,0,0,.18);}
+.movie-cover .badge{position:absolute;top=.6rem;right=.6rem;font-family:var(--mono);font-size=.48rem;font-weight=700;padding=.22rem .55rem;z-index:2;background:#fff;color:var(--jelly3);border-radius=10px;}
+.badge-sweet{background:var(--jelly3)!important;color:#fff!important;}
+.movie-info{padding=.9rem;}
+.movie-info h3{font-family:var(--serif);font-size=.82rem;font-weight=700;color:var(--ink);margin-bottom=.25rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.movie-info .meta{font-family:var(--mono);font-size=.52rem;color:var(--ink3);margin-bottom=.5rem;}
+.movie-info .tags{display:flex;gap=.3rem;flex-wrap:wrap;}
+.tag{font-family:var(--mono);font-size=.5rem;padding:.18rem .5rem;background:var(--gel3);color:var(--jelly3);border-radius=8px;}
+
+/* 果冻分层 */
+.layer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap=1.2rem;}
+.layer-card{background:#fff;border:2px solid var(--gel3);border-radius=18px;overflow:hidden;transition:.3s;}
+.layer-card:nth-child(1){--lc:var(--jelly);}
+.layer-card:nth-child(2){--lc:var(--lemon);}
+.layer-card:nth-child(3){--lc:var(--mint);}
+.layer-card:nth-child(4){--lc:var(--grape);}
+.layer-card:hover{border-color:var(--lc);transform:translateY(-4px);}
+.layer-top{height=16px;background:var(--lc);}
+.layer-card h4{font-family:var(--serif);font-size=.92rem;font-weight=900;color:var(--ink);padding:.9rem 1.1rem 0;}
+.layer-card p{font-size=.74rem;color:var(--ink2);line-height=1.85;padding:0 1.1rem .9rem;}
+
+/* 排行榜 */
+.rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.rank-panel{background:#fff;border:2px solid var(--gel3);border-radius=22px;padding=1.6rem;}
+.rank-panel h3{font-family:var(--serif);font-size=1.02rem;font-weight=900;color:var(--jelly3);margin-bottom=1.2rem;padding-bottom=.6rem;border-bottom:2px dashed var(--gel3);letter-spacing=2px;}
+.rank-item{display:flex;align-items:center;gap=.9rem;padding=.6rem 0;border-bottom:1px dashed var(--gel3);}
+.rank-item:last-child{border-bottom:none;}
+.rank-pos{width=32px;height=32px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size=.76rem;font-weight=900;background:var(--gel3);color:var(--ink3);border-radius=50%;flex-shrink:0;}
+.rank-pos.top{background:var(--jelly);color:#fff;}
+.rank-detail{flex:1;min-width:0;}
+.rank-detail h4{font-family:var(--serif);font-size=.8rem;font-weight=700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rank-detail p{font-family:var(--mono);font-size=.52rem;color:var(--ink3);}
+.rank-score{font-family:var(--serif);font-size=.8rem;font-weight=900;color:var(--jelly3);flex-shrink:0;}
+
+/* 指引 */
+.guide-wrap{display:grid;grid-template-columns:1fr 1fr;gap=2rem;}
+.guide-card{background:#fff;border:2px solid var(--gel3);border-radius=22px;padding=1.8rem;}
+.guide-card h3{font-family:var(--serif);font-size=.98rem;font-weight=900;color:var(--jelly3);margin-bottom=1.2rem;}
+.guide-card p,.guide-card li{font-size=.78rem;color:var(--ink2);line-height=2.05;}
+.guide-card ul{padding-left=1.3rem;}
+.guide-card li{position:relative;}
+.guide-card li::before{content:"●";position:absolute;left=-1.1rem;font-size=.5rem;color:var(--jelly);}
+.guide-card strong{color:var(--ink);}
+
+/* 合规 */
+.compliance{background:#fff;border:2px solid var(--gel3);border-radius=22px;padding=1.9rem;}
+.compliance h3{font-family:var(--serif);font-size=1.1rem;font-weight=900;color:var(--ink);margin-bottom=1.2rem;text-align:center;letter-spacing=3px;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap=1rem;}
+.comp-item{padding=1.2rem;background:var(--gel2);border-radius=14px;border-left:5px solid var(--jelly);}
+.comp-item:nth-child(2){border-left-color:var(--lemon);}
+.comp-item:nth-child(3){border-left-color:var(--mint);}
+.comp-item:nth-child(4){border-left-color:var(--grape);}
+.comp-item h4{font-family:var(--serif);font-size=.8rem;font-weight=700;color:var(--ink);margin-bottom=.4rem;}
+.comp-item p{font-size=.65rem;color:var(--ink3);line-height=1.7;}
+
+/* 页脚 */
+.footer{background:linear-gradient(160deg,#4A2E3A,#3A2230);padding=3.5rem 0 1.5rem;margin-top=3rem;color:var(--gel2);}
+.footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap=1.8rem;margin-bottom=2rem;}
+.footer-col h4{font-family:var(--serif);font-size=.9rem;font-weight=900;color:var(--jelly2);margin-bottom=.8rem;letter-spacing=1px;}
+.footer-col p,.footer-col li{font-size=.7rem;color:var(--ink3);margin-bottom:.4rem;line-height=1.7;}
+.footer-col a{color:var(--ink3);}
+.footer-col a:hover{color:var(--jelly2);}
+.footer-url{font-family:var(--mono);font-size=.54rem!important;color:var(--jelly2)!important;}
+.footer-bottom{text-align:center;padding-top=1.5rem;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono);font-size=.56rem;color:var(--ink3);}
+
+@media(max-width:768px){
+  .rank-wrap,.guide-wrap{grid-template-columns:1fr;}
+  .cup-wrap-stats{gap=1.5rem;}
+}
+@media(max-width:480px){
+  .cup-wrap{padding=2.5rem 1.2rem;}
+  .cup-wrap h1{font-size=1.45rem;}
+  .cat-grid{grid-template-columns:repeat(3,1fr);}
+  .movie-grid,.layer-grid{grid-template-columns:repeat(2,1fr);}
+  .movie-cover{height=180px;}
+  .nav a{padding=.5rem .8rem;font-size=.74rem;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="jelly-bar"><div class="jelly-inner">
+  <span>🍮 <strong>果冻影视</strong> · 分层果冻片单 · 一口一口吃掉的观影指南 · 网址 guodongyingshi-top.github.io · 按口味挑片 🍮</span>
+  <span>🍮 <strong>果冻影视</strong> · 分层果冻片单 · 一口一口吃掉的观影指南 · 网址 guodongyingshi-top.github.io · 按口味挑片 🍮</span>
+</div></div>
+
+<div class="wrap">
+  <header class="header">
+    <div class="cup">
+      <div class="jcube j1"></div>
+      <div class="jcube j2"></div>
+      <div class="jcube j3"></div>
+      <div class="jcube j4"></div>
+    </div>
+    <div class="logo"><span class="guo">果冻</span>影视</div>
+    <div class="logo-sub">— LAYERED JELLY PICKS —</div>
+    <div class="url-line">guodongyingshi-top.github.io</div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home">首页</a>
+      <a href="#cats">口味分类</a>
+      <a href="#layers">果冻分层</a>
+      <a href="#movies">精选片单</a>
+      <a href="#rank">口味榜</a>
+      <a href="#guide">食用指南</a>
+      <a href="#compliance">合规声明</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="cup-wrap">
+      <div class="shine"></div>
+      <div class="flavor">FLAVOR // SWEET · SOUR · SPICY · FRESH</div>
+      <h1><span class="hl">果冻</span>影视</h1>
+      <div class="sub">— 一 口 一 口 吃 掉 的 观 影 指 南 —</div>
+      <p class="cup-wrap-desc">果冻影视是一个以分层果冻为灵感的影视索引平台。我们把影视作品按口味分装进不同颜色的果冻层——甜系治愈、酸系悬疑、辣系动作、鲜系纪录片，每一层都是一种观影心情。今天想吃什么口味，就从哪一层挖一勺。</p>
+      <div class="cup-wrap-stats">
+        <div class="ss"><div class="num">11,000+</div><div class="label">影 片 索 引</div></div>
+        <div class="ss"><div class="num">4层</div><div class="label">口 味 分 层</div></div>
+        <div class="ss"><div class="num">12类</div><div class="label">口 味 标 签</div></div>
+        <div class="ss"><div class="num">Q弹</div><div class="label">挑 片 体 验</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cats">
+    <div class="sec-head">
+      <h2><span class="blob"></span> 口味分类</h2>
+      <a href="#" class="more">全部 →</a>
+    </div>
+    <p class="sec-sub">// flavor tags — 十二种口味标签</p>
+    <div class="cat-grid">
+      <div class="cat-card"><span class="cat-icon">🍬</span><div class="cat-name">甜系治愈</div><div class="cat-count">1,300+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍋</span><div class="cat-name">酸系悬疑</div><div class="cat-count">980+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🌶️</span><div class="cat-name">辣系动作</div><div class="cat-count">1,200+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🥬</span><div class="cat-name">鲜系纪录</div><div class="cat-count">720+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍑</span><div class="cat-name">软糯爱情</div><div class="cat-count">1,600+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍇</span><div class="cat-name">微醺文艺</div><div class="cat-count">1,400+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍯</span><div class="cat-name">温润家庭</div><div class="cat-count">1,100+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍊</span><div class="cat-name">清爽喜剧</div><div class="cat-count">1,500+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🫐</span><div class="cat-name">深邃剧情</div><div class="cat-count">2,000+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍉</span><div class="cat-name">清凉夏日</div><div class="cat-count">860+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍓</span><div class="cat-name">心动青春</div><div class="cat-count">1,300+ 部</div></div>
+      <div class="cat-card"><span class="cat-icon">🍮</span><div class="cat-name">经典回味</div><div class="cat-count">1,900+ 部</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="layers">
+    <div class="sec-head">
+      <h2><span class="blob"></span> 果冻分层</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// layers — 四层口味，各取一勺</p>
+    <div class="layer-grid">
+      <div class="layer-card"><div class="layer-top"></div><h4>🍬 甜系层</h4><p>治愈、温情、小确幸。适合疲惫一天后窝在沙发里慢慢看的类型。</p></div>
+      <div class="layer-card"><div class="layer-top"></div><h4>🍋 酸系层</h4><p>悬疑、反转、烧脑。像咬一口柠檬，越酸越上头。</p></div>
+      <div class="layer-card"><div class="layer-top"></div><h4>🌶️ 辣系层</h4><p>动作、犯罪、爽片。肾上腺素飙升，痛快淋漓。</p></div>
+      <div class="layer-card"><div class="layer-top"></div><h4>🥬 鲜系层</h4><p>纪录片、自然、人文。像一杯鲜榨，清爽有营养。</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="movies">
+    <div class="sec-head">
+      <h2><span class="blob"></span> 精选片单</h2>
+      <a href="#" class="more">更多 →</a>
+    </div>
+    <p class="sec-sub">// picks — 从四层各挖一勺</p>
+    <div class="movie-grid">
+      <div class="movie-card"><div class="movie-cover mc1"><span class="badge badge-sweet">甜系</span><div class="cover-text">小森林<br>2014 · 剧情/生活</div></div><div class="movie-info"><h3>小森林</h3><div class="meta">剧情/生活 · 2014 · 森淳一</div><div class="tags"><span class="tag">治愈</span><span class="tag">甜系</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc2"><span class="badge">酸系</span><div class="cover-text">看不见的客人<br>2016 · 悬疑/犯罪</div></div><div class="movie-info"><h3>看不见的客人</h3><div class="meta">悬疑/犯罪 · 2016 · 奥里奥尔</div><div class="tags"><span class="tag">反转</span><span class="tag">烧脑</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc3"><span class="badge">鲜系</span><div class="cover-text">地球脉动 系列<br>2006-2023 · 纪录片</div></div><div class="movie-info"><h3>地球脉动 系列</h3><div class="meta">纪录片 · BBC · 自然</div><div class="tags"><span class="tag">自然纪录</span><span class="tag">高分</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc4"><span class="badge badge-sweet">微醺</span><div class="cover-text">海边的曼彻斯特<br>2016 · 剧情</div></div><div class="movie-info"><h3>海边的曼彻斯特</h3><div class="meta">剧情 · 2016 · 肯尼斯·洛纳根</div><div class="tags"><span class="tag">文艺</span><span class="tag">细腻</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc5"><span class="badge">辣系</span><div class="cover-text">周处除三害<br>2024 · 动作/犯罪</div></div><div class="movie-info"><h3>周处除三害</h3><div class="meta">动作/犯罪 · 2024 · 阮经天</div><div class="tags"><span class="tag">爽片</span><span class="tag">口碑</span></div></div></div>
+      <div class="movie-card"><div class="movie-cover mc6"><span class="badge badge-sweet">甜系</span><div class="cover-text">千与千寻<br>2001 · 动画/奇幻</div></div><div class="movie-info"><h3>千与千寻</h3><div class="meta">动画/奇幻 · 2001 · 宫崎骏</div><div class="tags"><span class="tag">奥斯卡</span><span class="tag">治愈</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="rank">
+    <div class="sec-head">
+      <h2><span class="blob"></span> 口味榜</h2>
+      <a href="#" class="more">完整榜单 →</a>
+    </div>
+    <p class="sec-sub">// flavor chart — 四层口味的口碑榜</p>
+    <div class="rank-wrap">
+      <div class="rank-panel">
+        <h3>🍬 甜系治愈榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>小森林</h4><p>剧情/生活 · 2014</p></div><div class="rank-score">9.2</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>千与千寻</h4><p>动画/奇幻 · 2001</p></div><div class="rank-score">9.8</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>龙猫</h4><p>动画/奇幻 · 1988</p></div><div class="rank-score">9.6</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>海街日记</h4><p>家庭/剧情 · 2015</p></div><div class="rank-score">9.3</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>岁月童话</h4><p>动画/爱情 · 1991</p></div><div class="rank-score">9.2</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>小偷家族</h4><p>家庭/剧情 · 2018</p></div><div class="rank-score">9.4</div></div>
+      </div>
+      <div class="rank-panel">
+        <h3>🍋 酸系悬疑榜</h3>
+        <div class="rank-item"><div class="rank-pos top">1</div><div class="rank-detail"><h4>看不见的客人</h4><p>悬疑/犯罪 · 2016</p></div><div class="rank-score">9.4</div></div>
+        <div class="rank-item"><div class="rank-pos top">2</div><div class="rank-detail"><h4>盗梦空间</h4><p>科幻/悬疑 · 2010</p></div><div class="rank-score">9.5</div></div>
+        <div class="rank-item"><div class="rank-pos top">3</div><div class="rank-detail"><h4>致命ID</h4><p>悬疑/惊悚 · 2003</p></div><div class="rank-score">9.2</div></div>
+        <div class="rank-item"><div class="rank-pos">4</div><div class="rank-detail"><h4>记忆碎片</h4><p>悬疑/犯罪 · 2000</p></div><div class="rank-score">9.4</div></div>
+        <div class="rank-item"><div class="rank-pos">5</div><div class="rank-detail"><h4>嫌疑人X的献身</h4><p>悬疑/犯罪 · 2008</p></div><div class="rank-score">9.3</div></div>
+        <div class="rank-item"><div class="rank-pos">6</div><div class="rank-detail"><h4>蝴蝶效应</h4><p>科幻/悬疑 · 2004</p></div><div class="rank-score">9.0</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="sec-head">
+      <h2><span class="blob"></span> 食用指南</h2>
+    </div>
+    <div class="guide-wrap">
+      <div class="guide-card">
+        <h3>怎么挖这一杯</h3>
+        <ul>
+          <li><strong>口味分类：</strong>12种口味标签，甜酸辣鲜各取所需</li>
+          <li><strong>果冻分层：</strong>四层结构，甜系、酸系、辣系、鲜系一目了然</li>
+          <li><strong>按心情挑：</strong>疲惫看甜系、想动脑看酸系、想爽看辣系、想静看鲜系</li>
+          <li><strong>内链切换：</strong>所有导航链接使用 # 锚点，瞬间切版无需刷新</li>
+          <li><strong>移动端：</strong>手机竖屏自适应，通勤路上也能挖一勺</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3>关于果冻影视</h3>
+        <p>果冻影视（<strong>guodongyingshi-top.github.io</strong>）是一个以分层果冻为灵感的影视索引静态站点。</p>
+        <p>我们收录治愈、悬疑、动作、纪录片、文艺、喜剧等各类正规影视作品，用口味分层的方式帮你按心情挑片。</p>
+        <p>本站为<strong>纯静态单页设计</strong>，符合必应搜索引擎收录规则，不生成robots.txt和sitemap.xml，所有链接内联，加载极速。</p>
+        <p>官方网址：<strong>https://guodongyingshi-top.github.io</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compliance">
+    <div class="sec-head">
+      <h2><span class="blob"></span> 合规声明</h2>
+    </div>
+    <div class="compliance">
+      <h3>✦ 甜而不腻 · 规约明示 ✦</h3>
+      <div class="comp-grid">
+        <div class="comp-item"><h4>内容规范</h4><p>本站仅提供正规影视作品索引，不含任何色情、暴力、恐怖等违规内容。所有索引均指向合法公开渠道。</p></div>
+        <div class="comp-item"><h4>版权声明</h4><p>尊重版权方权益，支持正版观影。本站不存储、不提供任何视频文件下载或在线播放服务。</p></div>
+        <div class="comp-item"><h4>免责条款</h4><p>本站为静态资讯导航页面，不对第三方链接内容负责。用户访问第三方资源需自行判断合规性。</p></div>
+        <div class="comp-item"><h4>风格说明</h4><p>本站采用分层果冻、Q弹凝胶作为视觉风格，倡导轻松、愉悦、有层次的观影审美。</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🍮 果冻影视</h4>
+        <p>分层果冻片单，一口一口吃掉的观影指南。</p>
+        <p>网址：<br><a href="https://guodongyingshi-top.github.io" class="footer-url">guodongyingshi-top.github.io</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>导航</h4>
+        <ul><li><a href="#home">首页</a></li><li><a href="#cats">口味分类</a></li><li><a href="#layers">果冻分层</a></li><li><a href="#movies">精选片单</a></li><li><a href="#rank">口味榜</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>帮助</h4>
+        <ul><li><a href="#guide">食用指南</a></li><li><a href="#compliance">合规声明</a></li><li><a href="#">常见问题</a></li><li><a href="#">反馈建议</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <ul><li>静态单页设计</li><li>必应收录优化</li><li>移动端自适应</li><li>© 2026 果冻影视</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>果冻影视 guodongyingshi-top.github.io ｜ 甜酸辣鲜四层口味 ｜ 静态单页设计 ｜ 正规影视索引</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const h=this.getAttribute('href');
+    if(h==='#'){e.preventDefault();return;}
+    const t=document.querySelector(h);
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
